@@ -1,0 +1,63 @@
+#{$namespace} {
+    .ng-ui-btn {
+        &.ng-ui-btn-danger {
+            background: $dangerColor;
+            color: $btnPrimaryColor;
+
+            &[disabled]
+            &.disabled {
+                &:hover,
+                &:focus {
+                    background: $dangerColor;
+                }
+            }
+            &:hover,
+            &:focus {
+                background: desaturate(darken($dangerColor, 8%), 10%);
+            }
+            .ng-ui-btn-effect {
+                background: hsla(100, 100, 100, .25);
+            }
+        }
+
+        &.ng-ui-btn-success {
+            background: $successColor;
+            color: $btnPrimaryColor;
+            
+            &[disabled]
+            &.disabled {
+                &:hover,
+                &:focus {
+                    background: $successColor;
+                }
+            }
+            &:hover,
+            &:focus {
+                background: desaturate(darken($successColor, 8%), 10%);
+            }
+            .ng-ui-btn-effect {
+                background: hsla(100, 100, 100, .25);
+            }
+        }
+
+        &.ng-ui-btn-warning {
+            background: $warningColor;
+            color: $btnPrimaryColor;
+            
+            &[disabled]
+            &.disabled {
+                &:hover,
+                &:focus {
+                    background: $warningColor;
+                }
+            }
+            &:hover,
+            &:focus {
+                background: desaturate(darken($warningColor, 8%), 10%);
+            }
+            .ng-ui-btn-effect {
+                background: hsla(100, 100, 100, .25);
+            }
+        }
+    }
+}

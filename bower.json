@@ -1,0 +1,9 @@
+{
+    "name": "netgen-translations",
+    "homepage": "https://www.prime.ch/",
+    "authors": [
+        "Prime <info@prime.ch>"
+    ],
+    "dependencies": {
+    }
+}

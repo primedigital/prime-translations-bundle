@@ -1,0 +1,20 @@
+{% trans_default_domain 'prime_translations' %}
+
+{% set rootItemId = rootItemId|default(0) %}
+{% set showRootItem = showRootItem|default(true) %}
+{% set selectedItem = selectedItem|default(null) %}
+{% set disableSubtree = disableSubtree|default([]) %}
+{% if app.request.attributes.has('contentId') %}
+    {% set pathString = '/0/' ~ app.request.attributes.get('contentId') %}
+{% endif %}
+
+{% block item_tree %}
+    <div
+            class="ng-ui-tree"
+            data-path="{{ path('prime_translations.tree_get_children', {'contentId': '_itemId_'}) }}"
+            data-rootItemId="{{ rootItemId }}"
+            data-showRootItem="{{ showRootItem ? 'true' : 'false' }}"
+            data-selectedItemPath="{% if pathString is defined %}{{ pathString }}{% else %}{{ '/0/' }}{% endif %}"
+            data-disableSubtree="{{ disableSubtree|join(',') }}"
+    ></div>
+{% endblock %}

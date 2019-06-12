@@ -1,0 +1,8 @@
+parameters:
+    ignoreErrors:
+         -
+             message: '#Property Prime\\Bundle\\LayoutsFilterBlockBundle\\Block\\BlockDefinition\\Handler\\FilterBlockHandler::\$findService has unknown class Netgen\\EzPlatformSiteApi\\API\\FindService as its type.#'
+             path: bundle/Block/BlockDefinition/Handler/FilterBlockHandler.php
+         -
+             message: '#Parameter \$findService of method Prime\\Bundle\\LayoutsFilterBlockBundle\\Block\\BlockDefinition\\Handler\\FilterBlockHandler::__construct\(\) has invalid typehint type Netgen\\EzPlatformSiteApi\\API\\FindService.#'
+             path: bundle/Block/BlockDefinition/Handler/FilterBlockHandler.php

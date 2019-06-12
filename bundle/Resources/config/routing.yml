@@ -1,0 +1,27 @@
+prime_translations:
+    prefix:   /translations
+    resource: "@LexikTranslationBundle/Resources/config/routing.yml"
+
+
+prime_translations.tree_get_children:
+    path: /prime/translations/tree/{contentId}/{isRoot}
+    defaults:
+        _controller: prime.translations.controller.tree:getChildrenAction
+        _method: GET
+        isRoot: false
+
+lexik_translation_overview:
+    path:     /translations/
+    defaults: { _controller: "PrimeTranslationsBundle:Translation:overview" }
+    methods:  [GET]
+
+
+lexik_translation_grid:
+    path:     /translations/grid
+    defaults: { _controller: "PrimeTranslationsBundle:Translation:grid" }
+    methods:  [GET]
+
+lexik_translation_new:
+    path:     /translations/new
+    defaults: { _controller: "PrimeTranslationsBundle:Translation:new" }
+    methods:  [GET, POST]

@@ -1,0 +1,23 @@
+#globals:
+#    pime_translations_pagelayout: "@netgen_information_collection.templating.admin_global_variable"
+
+parameters:
+    prime_translations.default.pagelayout: '@@PrimeTranslations/pagelayout.html.twig'
+
+services:
+#    prime.translations.templating.admin_global_variable:
+#        class: Prime\Bundle\TranslationsBundle\Templating\Twig\AdminGlobalVariable
+#        public: true
+#         We need the lazy flag due to usage of dynamic parameters
+#        lazy: true
+#        calls:
+#            - [setPageLayoutTemplate, ["$pagelayout;prime_translations"]]
+    prime.translations.controller.tree:
+        class: Prime\Bundle\TranslationsBundle\Controller\TreeController
+        parent: ezpublish.controller.base
+        public: true
+        arguments:
+            - "@lexik_translation.translation_storage"
+            - "@lexik_translation.overview.stats_aggregator"
+            - "@translator"
+            - "@router"

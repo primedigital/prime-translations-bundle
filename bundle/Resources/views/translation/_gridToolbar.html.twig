@@ -1,0 +1,15 @@
+<div>
+    <h1>
+        {{ 'translations.page_title'|trans({}, 'LexikTranslationBundle') }}
+        <div class="pull-right">
+            <a href="{{ path('lexik_translation_new') }}" role="button" class="ng-ui-btn ng-ui-btn-primary">
+                <span class="glyphicon glyphicon-plus"></span>
+                {{ 'translations.new_translation'|trans({}, 'LexikTranslationBundle') }}
+            </a>
+            <a href="{{ path('lexik_translation_overview') }}" role="button" class="ng-ui-btn">
+                <span class="glyphicon glyphicon-tasks"></span>
+                {{ 'overview.page_title'|trans({}, 'LexikTranslationBundle') }}
+            </a>
+        </div>
+    </h1>
+</div>

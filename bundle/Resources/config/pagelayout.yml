@@ -1,0 +1,13 @@
+#services:
+#    prime.translations.event_listener.set_pagelayout:
+#        class: Netgen\Bundle\AdminUIBundle\EventListener\SetPrimeTranslationsPageLayoutListener
+#        # public: false
+#        arguments:
+#            - "@prime.translations.templating.admin_global_variable"
+#            - "%prime_translations.default.pagelayout%"
+#        # Using siteaccess aware config, so we need the lazy flag
+#        lazy: true
+#        calls:
+#            - [setIsAdminSiteAccess, [$is_admin_ui_siteaccess;netgen_admin_ui$]]
+#        tags:
+#            - { name: kernel.event_subscriber }

@@ -1,0 +1,47 @@
+{% extends '@NetgenAdminUI/pagelayout.html.twig' %}
+
+{% trans_default_domain 'prime_translations' %}
+
+{% block title %}
+    {% block lexik_title %}{% endblock %}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% block lexik_stylesheets %}
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('bundles/lexiktranslation/ng-table/ng-table.min.css') }}">
+
+        {% include '@PrimeTranslations/stylesheets.html.twig' %}
+    {% endblock %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {% block lexik_javascript_footer %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
+        <script src="{{ asset('bundles/lexiktranslation/ng-table/ng-table.min.js') }}"></script>
+        {% include '@PrimeTranslations/javascripts.html.twig' %}
+    {% endblock %}
+{% endblock %}
+
+
+{% block content %}
+    {% block lexik_content '' %}
+{% endblock %}
+
+{% block pre_content %}
+<div class="prime-translations-app">
+    <div class="ng-ui-content">
+        <div class="path">
+            {% include '@PrimeTranslations/page_path.html.twig' %}
+        </div>
+{% endblock %}
+
+{% block post_content %}
+    </div>
+</div>
+{% endblock %}
