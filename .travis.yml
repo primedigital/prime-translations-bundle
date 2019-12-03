@@ -1,0 +1,37 @@
+language: php
+
+# directories to cache
+cache:
+    directories:
+        - vendor
+        - $HOME/.composer/cache
+
+php:
+    - '7.0'
+    - '7.1'
+    - '7.2'
+    - '7.3'
+
+# test only master (+ pull requests)
+branches:
+    only:
+        - master
+
+# install dependencies
+install:
+    - composer install
+
+# execute phpunit as the script command
+script:
+    - ./vendor/bin/phpunit -d memory_limit=-1 --colors -c phpunit.xml
+
+# disable mail notifications
+notification:
+    email: false
+
+# reduce depth (history) of git checkout
+git:
+    depth: 30
+
+# we don't need sudo
+sudo: false
