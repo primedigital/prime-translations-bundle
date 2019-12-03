@@ -20,7 +20,9 @@
         "jit-grunt": "^0.10.0",
         "node-sass": "^4.9.0",
         "time-grunt": "^1.4.0",
-        "uglifyify": "^5.0.0"
+        "uglifyify": "^5.0.0",
+        "diff": "^3.5.0",
+        "set-value": "^2.0.1"
     },
     "dependencies": {
         "@netgen/admin-ui": "^1.0.8"
