@@ -3,6 +3,7 @@
 namespace Prime\Bundle\TranslationsBundle\Controller;
 
 use eZ\Bundle\EzPublishCoreBundle\Controller;
+use eZ\Publish\Core\MVC\Symfony\Locale\LocaleConverterInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Translation\TranslatorInterface;
@@ -116,13 +117,35 @@ class TreeController extends Controller
     {
         $languages = $this->getConfigResolver()->getParameter('languages');
 
+        /** @var LocaleConverterInterface $converter */
+        $converter = $this->get('ezpublish.locale.converter');
+
+
+        $locale = $converter->convertToPOSIX($languages[0]);
+        $isoLocale = explode("_", $locale)[0];
+
+
+        $stats = $this->get('lexik_translation.overview.stats_aggregator')->getStats();
+
+        $domainText = $domain;
+        if (!empty($stats[$domain])) {
+            if (!empty($stats[$domain][$locale])) {
+                $domainText = $domain . ' (' . $stats[$domain][$locale]['keys'] . ')';
+            }
+
+            if (!empty($stats[$domain][$isoLocale])) {
+                $domainText = $domain . ' (' . $stats[$domain][$isoLocale]['keys'] . ')';
+            }
+        }
+
         return array(
             'id' => $domain,
             'parent' => $isRoot ? '#' : '0',
-            'text' => $domain . ' (' . 2 . ')',
+            'text' => $domainText,
             'children' => false,
             'a_attr' => array(
-                'href' => $this->router->generate('lexik_translation_grid') . "#?filter[_domain]=$domain",
+//                'href' => $this->router->generate('lexik_translation_grid') . "#?filter[_domain]=$domain",
+                'href' => "",
                 'rel' => $domain,
             ),
             'state' => array(
