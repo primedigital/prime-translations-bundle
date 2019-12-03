@@ -6,7 +6,7 @@ PrimeTranslationsBundle
 [![Latest stable](https://img.shields.io/packagist/v/primedigital/translations-bundle.svg?style=flat-square)](https://packagist.org/packages/primedigital/translations-bundle)
 [![License](https://img.shields.io/packagist/l/primedigital/translations-bundle.svg?style=flat-square)](LICENSE)
 
-WIP.
+Bundle enables manipulation of translation files inside [Netgen Admin UI](https://github.com/netgen/NetgenAdminUIBundle). Solution is based on [LexikTranslationBundle](https://github.com/lexik/LexikTranslationBundle).
 
 
 License, docs and installation instructions
