@@ -9,11 +9,15 @@
         "translations"
     ],
     "homepage": "https://bitbucket.org/primedigital/primetranslationsbundle",
-    "license": "proprietary",
+    "license": "GPL-2.0-only",
     "authors": [
         {
           "name": "Prime",
           "homepage": "https://www.prime.ch"
+        },
+        {
+            "name": "Mario Blažek",
+            "homepage": "https://marioblazek.dev"
         }
     ],
     "autoload": {
