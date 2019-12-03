@@ -7,7 +7,6 @@ composer.phar
 composer.lock
 phpunit.phar
 .php_cs.cache
-phpunit.xml
 coverage.xml
 build/
 .tmp/
