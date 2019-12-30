@@ -30,7 +30,7 @@
             <div class="form-group">
                 {% for translation in form.translations %}
                     {{ form_label(translation) }}
-                    {{ form_widget(translation.content, { 'attr': {'class': 'form-control'} }) }}
+                    {{ form_widget(translation.content, { 'required': true, 'attr': {'class': 'form-control'} }) }}
                     <span class="text-danger">{{ form_errors(translation.content) }}</span>
                     {{ form_widget(translation.locale) }}
                 {% endfor %}
