@@ -31,7 +31,7 @@
         }
     },
     "require": {
-        "ezsystems/ezpublish-kernel": "^6.13|^7.0",
+        "ezsystems/ezplatform-kernel": "^1.0",
         "lexik/translation-bundle": "~4.0"
     },
     "require-dev": {
@@ -48,7 +48,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.x-dev"
+            "dev-master": "2.0.x-dev"
         }
     }
 }
